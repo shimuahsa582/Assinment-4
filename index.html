@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!--Bootstrap CSS Code-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <div id="full-ticket-form"> 
+    <div  class="main-content container d-flex">
+        <div  class="booking-form bg-light p-4 rounded m-3 shadow ">
+            <h4>Booking Flights</h4>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <!-- first count part -->
+            <div class="input-group f-class d-flex align-items-center">
+                <div>
+                    <label  for="">First Class <span id="first_count-total">$150</span></label>
+                    <input id="first_count-count" type="text" class="form-control text-center" value="1">
+                </div>
+                <div class="plus-minus-btn d-flex mt-4">
+                    <button onclick="handleTicketChange('first_count', true)"   class="btn text-white btn-primary m-1">+</button>
+                    <button onclick="handleTicketChange('first_count', false)" class="btn text-white btn-primary m-1">-</button>
+                </div> 
+            </div>
+            <!-- economy part -->
+            <div class="input-group f-class">
+                <div>
+                    <label  for=''>Economy <span id="economy_count-total">$100</span></label>
+                    <input id="economy_count-count" type="text" class="form-control text-center" value="1">
+                </div>
+                <div class="plus-minus-btn d-flex mt-4">
+                    <button onclick="handleTicketChange('economy_count', true)" class="btn text-white btn-primary  m-1 ">+</button>
+                    <button onclick="handleTicketChange( 'economy_count', false)" class="btn text-white btn-primary m-1">-</button>
+                </div>
+            </div>
+            <!-- total calculation part -->
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p id="subtotal_price">$000</p>
+                    </div>
+                </div>
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p id="text_amount">$000</p>
+                    </div>
+                </div>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p id="grand_total">$000</p>
+                    </div>
+                </div>
+            </div>
+            <!-- book now button -->
+            <button id="final_submit_button" class="btn-style btn btn-primary">Book Now</button>
+        </div>
+        <div  class="booking-content ">
+            <h1 class="display-3 text-uppercase shadow">Discover around <br> the world wild</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+        </div>
+    </div>
+</div>
+
+<!-- ticket booking success message page -->
+    <div id="success_page" class=" container success_message">
+        <div class=" success-masseg-card mt-5  bg-warning rounded p-5 text-center shadow">
+            <h3>Wow! Your Ticket Booking</h3>
+            <p>Best wishes to your Journey</p>
+            <div class="d-flex justify-content-center ">
+                <a class="text-decoration-none text-white" href="index.html"><button class="btn btn-success ms-2">Download Ticket</button></a> 
+                <a class="text-decoration-none text-white" href="index.html"><button class="btn btn-danger ms-2">Re-Check</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!--Javascript External Link-->
+    <script src="index.js"></script>
+
+    <!--Bootstrap Javascript Code-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</body>
+</html>
